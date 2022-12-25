@@ -1,0 +1,226 @@
+@media (width <=767px) {
+  :root {
+    --transition-3: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s,
+      transform 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+  }
+
+  nav {
+    width: 100vw;
+    height: 55px;
+  }
+  nav::after {
+    bottom: 0px;
+    z-index: -1;
+  }
+  nav ul {
+    position: absolute;
+    flex-direction: column;
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: white;
+    align-items: center;
+    display: none;
+    z-index: 100;
+  }
+  .ul-show {
+    display: flex;
+  }
+  nav ul > li {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  nav ul > li:nth-child(1) {
+    margin-top: 100px;
+  }
+  nav ul > li > a {
+    font-size: 19px;
+  }
+  .contact {
+    width: 150px;
+    margin: 15px auto;
+    width: 70vw;
+    font-size: 18px;
+  }
+  .brand-name {
+    font-size: 26px;
+    padding: 0 13px;
+  }
+
+  .navbar-toggler {
+    position: relative;
+    width: 40px;
+    height: 50px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 101;
+  }
+  .navbar-toggler span {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    transition: 0.5s;
+  }
+
+  .navbar-toggler span:nth-child(1) {
+    transform: translateY(-10px);
+  }
+
+  .navbar-toggler span:nth-child(2) {
+    transform: translateY(10px);
+  }
+
+  .navbar-toggler.activenav span:nth-child(3) {
+    transform: translateX(60px);
+  }
+
+  .navbar-toggler.activenav span:nth-child(1) {
+    transform: translateY(0px) rotate(45deg);
+    transition: 0.5s;
+    transition-delay: 0.25ms;
+  }
+
+  .navbar-toggler.activenav span:nth-child(2) {
+    transform: translateY(0px) rotate(315deg);
+    transition: 0.5s;
+    transition-delay: 0.125ms;
+  }
+
+  /* Intro  */
+
+  #intro {
+    padding: 10px 15px;
+  }
+  .title-one {
+    font-size: 20px;
+  }
+  .title-two {
+    font-size: 37px;
+  }
+  .title-three {
+    font-size: 33px;
+  }
+  .subtitle {
+    font-weight: 500;
+  }
+  br {
+    display: none;
+  }
+  .intro-btn {
+    gap: 15px;
+  }
+  .btn {
+    width: 200px;
+  }
+
+  /* Hire Modal  */
+
+  #hire-modal {
+    padding: 50px 20px;
+  }
+  #hire-modal p {
+    font-size: 16px;
+  }
+  .ways {
+    gap: 25px;
+  }
+  .ways a {
+    font-size: 25px;
+    width: 150px;
+  }
+
+  /* About  */
+  .reveal {
+    transition: var(--transition-3);
+  }
+
+  #about {
+    margin-top: 75px;
+  }
+  .about-boxes {
+    flex-direction: column;
+    align-items: unset;
+    padding: 0 15px;
+  }
+  .big-title {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 10px;
+  }
+  .big-title p {
+    font-size: 25px;
+  }
+  .decor {
+    width: 30vw;
+  }
+
+  .about-text {
+    font-size: 17px;
+    padding: 0 8px;
+  }
+  .image-side {
+    display: flex;
+    align-self: center;
+    margin-top: 20px;
+    width: 230px;
+    height: 270px;
+  }
+  .image-side img {
+    height: 230px;
+  }
+  .image-side::before {
+    height: 85%;
+  }
+  .image-side::after {
+    height: 81%;
+    left: 25px;
+    top: 35px;
+  }
+  .image-side:hover::after {
+    top: 25px;
+    left: 15px;
+  }
+
+  /* Services  */
+
+  #services {
+    margin-top: 75px;
+  }
+  .main-heading {
+    font-size: 8vw;
+  }
+  .sub-heading {
+    padding: 0 10px;
+    font-size: 15px;
+  }
+
+  .boxes {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .card {
+    width: 92vw;
+    height: 320px;
+  }
+  .service-box-2 img {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .services-box img {
+    height: 26vw;
+  }
+
+  footer {
+    margin-top: 75px;
+  }
+}

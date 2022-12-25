@@ -1,0 +1,121 @@
+@media (575px <= width <= 767px) {
+  .title-one {
+    font-size: 26px;
+  }
+  .title-two {
+    font-size: 48px;
+  }
+  .title-three {
+    font-size: 42px;
+  }
+  .subtitle {
+    font-size: 17px;
+  }
+  .intro-btn {
+    justify-content: center;
+    gap: 30px;
+  }
+  .btn {
+    width: 40vw;
+  }
+  .image-side {
+    width: 295px;
+    height: 349px;
+  }
+  .image-side img {
+    height: 295px;
+  }
+  .big-title p {
+    font-size: 32px;
+  }
+  .big-title {
+    grid-template-columns: 175px 1fr;
+  }
+  .decor {
+    width: 60vw;
+  }
+
+  /* Services  */
+
+  .services-box img {
+    height: 150px;
+  }
+  .service-box-2 img {
+    height: 130px;
+  }
+}
+
+@media (768px <= width <= 991px) {
+  nav {
+    width: 90vw;
+    height: 60px;
+  }
+  .title-one {
+    font-size: 23px;
+  }
+  .title-two {
+    font-size: 65px;
+  }
+  .title-three {
+    font-size: 53px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .subtitle br,
+  .about-text br {
+    display: none;
+  }
+  .image-side {
+    width: 25vw;
+    height: 25vw;
+    margin-top: 90px;
+  }
+  .image-side img {
+    height: 25vw;
+  }
+  .big-title {
+    display: grid;
+    grid-template-columns: 178px 1fr;
+    gap: 0;
+  }
+  .grid {
+    gap: 0;
+    display: grid;
+    grid-template-columns: 43vw 28vw;
+    align-items: unset;
+  }
+  .about-text {
+    width: 37vw;
+  }
+  .contact {
+    width: 130px;
+  }
+  .fixed-mail {
+    gap: 13vw;
+  }
+  .btn {
+    width: 20vw;
+  }
+
+  /* Services  */
+
+  .main-heading {
+    font-size: 50px;
+  }
+  .sub-heading {
+    font-size: 16px;
+  }
+  .boxes {
+    display: grid;
+    grid-template-columns: 38vw 36vw;
+    gap: 0;
+  }
+  .card {
+    width: 36vw;
+    height: 330px;
+  }
+  .top-m {
+    margin-top: 30px;
+  }
+}
