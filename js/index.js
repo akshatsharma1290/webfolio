@@ -2,7 +2,6 @@
 const old_chatBtn = document.querySelector(".contact")
 const nav = document.getElementsByTagName("nav")[0];
 const links = Array.from(document.querySelectorAll("nav ul > li > a"))
-const hm_links = Array.from(document.querySelectorAll(".home-links"))
 const list = Array.from(document.querySelectorAll("nav ul > li "))
 const ul = document.getElementsByTagName("ul")[0];
 const toggler = document.querySelector(".navbar-toggler")
@@ -29,8 +28,8 @@ function media(x) {
         brand.after(toggler)
         fixed_items[0].remove()
         fixed_items[1].remove()
-       
-        
+
+
     }
     if (y.matches) {
         nav.appendChild(old_chatBtn)
@@ -55,7 +54,7 @@ y.addEventListener("change", media)
 //         const window_height = window.innerHeight
 //         preloader.style.height = `${window_height}px`
 //     }
-    
+
 // })
 
 
@@ -137,54 +136,6 @@ const link_show = () => {
     }, 300)
 }
 
-
-// reveal elements on scroll 
-const reveal = Array.from(document.querySelectorAll(".reveal"))
-const container = Array.from(document.querySelectorAll(".main-container"))
-
-
-const revealer = () => {
-    for (let i = 0; i < reveal.length + 1; i++) {
-        let elementFromTop = container[i].getBoundingClientRect().top
-        let windowHeight = window.innerHeight
-        if (elementFromTop < windowHeight) {
-            if(i == 4){
-                for (const k of links) {
-                    k.classList.remove("link-active")
-                    k.classList.remove("active")
-                }
-                break;
-            }else{
-                reveal[i].classList.add("reveal-active")    
-            }
-            for (const j of links) {
-                if(j == links[i]){
-                    j.classList.add("link-active")
-                    j.classList.add("active")
-                }else{
-                    j.classList.remove("link-active")
-                    j.classList.remove("active")
-
-                }
-            }
-        }
-
-
-    }
-
-    if(document.documentElement.scrollTop > 150){
-        document.getElementsByTagName("header")[0].classList.remove("non-sticky")
-        document.getElementsByTagName("header")[0].classList.add("sticky")
-        
-    }else{
-        
-        document.getElementsByTagName("header")[0].classList.remove("sticky")
-        document.getElementsByTagName("header")[0].classList.add("non-sticky")
-    }
-
-    
-}
-
 // Running the loading Functions 
 document.onreadystatechange = async () => {
 
@@ -193,13 +144,10 @@ document.onreadystatechange = async () => {
     } else {
         await load_func()
         await load_ending()
-        document.documentElement.scrollTop = 0
         show(fade, 300, "fade-up")
         show(nav_arr, 600, "nav-visible")
         show(fixed_items, 1100, "fixed-visible")
         link_show()
-        window.addEventListener("scroll", revealer)
-
     }
 
 }
@@ -215,6 +163,69 @@ modal_dismiss.addEventListener("click", () => {
 })
 
 
+// reveal elements on scroll 
+const reveal = Array.from(document.querySelectorAll(".reveal"))
+const container = Array.from(document.querySelectorAll(".main-container"))
+const cont2 = Array.from(document.querySelectorAll(".container"))
+
+const revealer = () => {
+
+    for (let i = 0; i < reveal.length; i++) {
+        let elementFromTop = container[i].getBoundingClientRect().top
+        let windowHeight = window.innerHeight
+
+        if (elementFromTop < windowHeight) {
+            reveal[i].classList.add("reveal-active")
+        }
+
+
+    }
+
+
+    for (let j = 0; j < cont2.length; j++) {
+        let elementFromTop = cont2[j].getBoundingClientRect().top
+        let windowHeight = window.innerHeight
+
+        if (elementFromTop < windowHeight) {
+            if (j == 4) {
+                for (const l of links) {
+                    l.classList.remove("link-active")
+                    l.classList.remove("active")
+
+                }
+                break;
+            }
+
+            for (const k of links) {
+                if (k == links[j]) {
+                    k.classList.add("link-active")
+                    k.classList.add("active")
+                } else {
+                    k.classList.remove("link-active")
+                    k.classList.remove("active")
+
+                }
+            }
+        }
+
+    }
+
+
+
+    if (document.documentElement.scrollTop > 150) {
+        document.getElementsByTagName("header")[0].classList.remove("non-sticky")
+        document.getElementsByTagName("header")[0].classList.add("sticky")
+
+    } else {
+
+        document.getElementsByTagName("header")[0].classList.remove("sticky")
+        document.getElementsByTagName("header")[0].classList.add("non-sticky")
+    }
+
+
+}
+
+window.addEventListener("scroll", revealer)
 
 
 // Active link Function 
@@ -234,5 +245,3 @@ links.forEach((e) => {
     })
 
 })
-
-
