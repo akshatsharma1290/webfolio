@@ -2,6 +2,7 @@
 const old_chatBtn = document.querySelector(".contact")
 const nav = document.getElementsByTagName("nav")[0];
 const links = Array.from(document.querySelectorAll("nav ul > li > a"))
+const hm_links = Array.from(document.querySelectorAll(".home-links"))
 const list = Array.from(document.querySelectorAll("nav ul > li "))
 const ul = document.getElementsByTagName("ul")[0];
 const toggler = document.querySelector(".navbar-toggler")
@@ -18,6 +19,16 @@ const modal_dismiss = document.querySelector(".dismiss")
 
 
 
+const mobLinkActive = () => {
+
+    hm_links.forEach(hm_links => {
+        hm_links.addEventListener("click", () => {
+            toggler.click()
+        })
+    });
+
+
+}
 // Media query using javascript 
 function media(x) {
 
@@ -28,6 +39,7 @@ function media(x) {
         brand.after(toggler)
         fixed_items[0].remove()
         fixed_items[1].remove()
+        mobLinkActive()
 
 
     }
@@ -46,16 +58,6 @@ const y = window.matchMedia("(min-width:768px)")
 media(x)
 x.addEventListener("change", media)
 y.addEventListener("change", media)
-
-// EventLis tener to change Preloader Height (doing this because of keyboard messing up layout )
-
-// addEventListener("resize" , ()=>{
-//     if(window.innerHeight < 9999 && window.innerWidth <= 991){
-//         const window_height = window.innerHeight
-//         preloader.style.height = `${window_height}px`
-//     }
-
-// })
 
 
 
@@ -136,6 +138,16 @@ const link_show = () => {
     }, 300)
 }
 
+const scrollTop = () => {
+
+    if (document.documentElement.scrollTop != 0) {
+        document.documentElement.scrollTop = 0
+    }
+
+
+}
+
+
 // Running the loading Functions 
 document.onreadystatechange = async () => {
 
@@ -144,6 +156,7 @@ document.onreadystatechange = async () => {
     } else {
         await load_func()
         await load_ending()
+        scrollTop()
         show(fade, 300, "fade-up")
         show(nav_arr, 600, "nav-visible")
         show(fixed_items, 1100, "fixed-visible")
