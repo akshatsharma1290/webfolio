@@ -3,6 +3,12 @@
     --transition-3: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s,
       transform 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
   }
+   .sticky a{
+    color: black !important;
+  }
+  .sticky .activenav span{
+    background-color: black !important;
+  }
 
   nav {
     width: 100vw;
