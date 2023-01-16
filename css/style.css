@@ -47,11 +47,9 @@ html {
   --color-green: #64ffda;
   --transition-1: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s,
     transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
-  --transition-2: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s,
+  --transition-2: opacity 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s,
     transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
 }
-
-/* Scrollbar  */
 
 /* Preloader  */
 
@@ -118,53 +116,51 @@ html {
 }
 
 /* Navbar */
-header{
+header {
   position: sticky;
   top: unset;
   z-index: 80;
-  transition:0.5s;
+  transition: 0.5s;
 }
-.non-sticky{
-  animation: stickyRemove 0.7s linear 1  ;
-}
-
-.sticky{
-background-color: var(--color-5);
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-
-color:white;
-transition:0.5s;
-animation: stickyShow 0.5s linear 1  ;
-top: 0;
-}
-@keyframes stickyShow{
-  from{
-top: -100px;
- }
- to{
-   top: 0px;
- }
- 
+.non-sticky {
+  animation: stickyRemove 0.7s linear 1;
 }
 
-@keyframes stickyRemove{
-  from{
+.sticky {
+  background-color: var(--color-5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+  color: white;
+  transition: 0.5s;
+  animation: stickyShow 0.5s linear 1;
+  top: 0;
+}
+@keyframes stickyShow {
+  from {
+    top: -100px;
+  }
+  to {
     top: 0px;
   }
-  to{
+}
+
+@keyframes stickyRemove {
+  from {
+    top: 0px;
+  }
+  to {
     top: -100px;
   }
 }
 
-
-.sticky a{
+.sticky a {
   color: white !important;
 }
-.sticky #header-wrapper::after{
+.sticky #header-wrapper::after {
   display: none;
 }
-.sticky .navbar-toggler span{
-  background-color:white !important;
+.sticky .navbar-toggler span {
+  background-color: white !important;
 }
 
 #header-wrapper {
@@ -641,7 +637,7 @@ nav ul > li > a:hover::before {
 }
 .card {
   width: 25vw;
-  height: 23vw;
+  height: 330px;
   background-color: var(--color-5);
   padding: 10px 20px;
   transition: var(--transition-1);
