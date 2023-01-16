@@ -46,6 +46,7 @@
   }
   .card {
     height: 360px;
+    width: 36vw;
   }
 }
 @media (1200px <= width <= 1320px) {
@@ -57,6 +58,13 @@
 @media (min-width: 1400px) {
   html {
     font-size: 110%;
+  }
+  .boxes{
+    gap: 1.5vw;
+  }
+  .card{
+    width: 26.5vw;
+    height: 380px;
   }
 }
 
